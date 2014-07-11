@@ -50,7 +50,7 @@ set guioptions-=T "remove toolbar
 set guioptions-=L "remove scrool bars
 set guioptions-=r "remove scrool bars
 set guioptions-=R "remove scrool bars
-set guifont=Sauce\ Code\ Powerline:h14
+set guifont=Sauce\ Code\ Powerline\ Light:h14
 
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap <F7> :NERDTreeTabsToggle<CR>
@@ -116,7 +116,7 @@ set directory=~/.vim/tmp
 colorscheme wombat256
 if has("gui_running")
     colorscheme solarized
-    let g:airline_theme='solarized'
+    let g:airline_theme='zenburn'
     set background=dark
 endif
 

@@ -31,6 +31,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle "pangloss/vim-javascript"
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kana/vim-textobj-line'
+Bundle 'endel/vim-github-colorscheme'
 
 " highlight trailing spaces, special spaces and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -115,8 +118,8 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 colorscheme wombat256
 if has("gui_running")
-    colorscheme solarized
-    let g:airline_theme='zenburn'
+    colorscheme wombat256
+    let g:airline_theme='powerlineish'
     set background=dark
 endif
 

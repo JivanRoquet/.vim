@@ -34,6 +34,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-line'
 Bundle 'endel/vim-github-colorscheme'
+Bundle 'zeis/vim-kolor'
+Bundle 'morhetz/gruvbox'
 
 " highlight trailing spaces, special spaces and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -53,7 +55,8 @@ set guioptions-=T "remove toolbar
 set guioptions-=L "remove scrool bars
 set guioptions-=r "remove scrool bars
 set guioptions-=R "remove scrool bars
-set guifont=Sauce\ Code\ Powerline\ Light:h14
+set guifont=Monaco\ for\ Powerline:h14
+" set guifont=Sauce\ Code\ Powerline\ Light:h14
 
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap <F7> :NERDTreeTabsToggle<CR>
@@ -116,12 +119,16 @@ set t_Co=256
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-colorscheme wombat256
+colorscheme gruvbox
+set background=dark
+let g:airline_theme='gruvbox'
 if has("gui_running")
-    colorscheme wombat256
-    let g:airline_theme='powerlineish'
-    set background=dark
+    colorscheme gruvbox
 endif
+
+" jump to prev/next line with same indentation level
+nnoremap <F9> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <F10> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 
 " don't do backups and swapfiles
 set nobackup

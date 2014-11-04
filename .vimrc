@@ -143,6 +143,8 @@ map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
+map <C-c> ysiW{ ysa}}
+map <C-v> ds} ds{
 " autocmd BufEnter *.md nested set nonumber
 autocmd BufEnter *.md nested set textwidth=80
 " autocmd BufEnter *.py nested TagbarOpen

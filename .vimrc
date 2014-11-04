@@ -55,7 +55,7 @@ set guioptions-=T "remove toolbar
 set guioptions-=L "remove scrool bars
 set guioptions-=r "remove scrool bars
 set guioptions-=R "remove scrool bars
-set guifont=Monaco\ for\ Powerline:h14
+set guifont=Monaco\ for\ Powerline:h10
 " set guifont=Sauce\ Code\ Powerline\ Light:h14
 
 let g:nerdtree_tabs_open_on_gui_startup=0
@@ -119,11 +119,13 @@ set t_Co=256
 set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-colorscheme gruvbox
 set background=dark
-let g:airline_theme='gruvbox'
+colorscheme wombat256
+let g:airline_theme='wombat'
 if has("gui_running")
-    colorscheme gruvbox
+    set background=light
+    colorscheme solarized
+    let g:airline_theme='gruvbox'
 endif
 
 " jump to prev/next line with same indentation level

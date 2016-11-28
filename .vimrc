@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 set encoding=utf-8
 set backspace=indent,eol,start
+set pastetoggle=<F11>
 
 " Powerline settings
 " set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/plugin/powerline.vim
@@ -51,6 +52,11 @@ Bundle 'posva/vim-vue'
 Bundle 'sekel/vim-vue-syntastic'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'nvie/vim-flake8'
+Bundle 'Shougo/vimproc'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'eagletmt/neco-ghc'
+Bundle 'neovimhaskell/haskell-vim'
+
 
 " highlight trailing spaces, special spaces and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -82,7 +88,7 @@ set guioptions-=R "remove scrool bars
 set guifont=Sauce\ Code\ Powerline\ Light:h14
 
 let g:nerdtree_tabs_open_on_gui_startup=0
-nmap <F7> :NERDTreeTabsToggle<CR>
+nmap <F6> :NERDTreeTabsToggle<CR>
 
 " change cursor color in terminal mode
 if &term =~ "xterm\\|rxvt"

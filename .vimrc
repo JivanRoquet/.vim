@@ -56,7 +56,8 @@ Bundle 'Shougo/vimproc'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'eagletmt/neco-ghc'
 Bundle 'neovimhaskell/haskell-vim'
-
+Bundle 'keith/swift.vim'
+Bundle 'rust-lang/rust.vim'
 
 " highlight trailing spaces, special spaces and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
@@ -85,7 +86,7 @@ set guioptions-=L "remove scrool bars
 set guioptions-=r "remove scrool bars
 set guioptions-=R "remove scrool bars
 "set guifont=Inconsolata-g\ for\ Powerline:h10
-set guifont=Sauce\ Code\ Powerline\ Light:h14
+set guifont=Sauce\ Code\ Powerline\ Light:h16
 
 let g:nerdtree_tabs_open_on_gui_startup=0
 nmap <F6> :NERDTreeTabsToggle<CR>
@@ -129,6 +130,8 @@ set wildmenu
 syntax on
 let g:rainbow_active = 0
 
+set clipboard=unnamed
+
 au BufRead,BufNewFile *.html set filetype=htmljinja
 au BufRead,BufNewFile *.vue set filetype=html
 au BufRead,BufNewFile *.hbs set filetype=mustache
@@ -136,10 +139,9 @@ au BufRead,BufNewFile *.handlebars set filetype=mustache
 set grepprg=grep\ -nH\ $*
 let python_highlight_all = 1
 let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
-let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_python_checker_args='--ignore=E501'
-let g:syntastic_python_flake8_exe = 'python3 -m flake8'
+let g:syntastic_python_checkers = ['mypy']
+let g:syntastic_python_mypy_exe = 'python3 -m mypy '
+let g:syntastic_python_mypy_args = '--fast-parser --silent-imports --python-version 3.6'
 au BufRead,BufNewFile *.md set nofoldenable
 
 " indents and tabs
@@ -150,7 +152,7 @@ set shiftwidth=4
 set softtabstop=4
 
 " general configuration
-set cul " highlight current line
+"set cul " highlight current line
 set textwidth=0
 set hlsearch
 set number
@@ -159,13 +161,9 @@ set backup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 set background=dark
-colorscheme molokai
-let g:airline_theme='powerlineish'
-if has("gui_running")
-    set background=dark
-    colorscheme nefertiti
-    let g:airline_theme='zenburn'
-endif
+set termguicolors
+colorscheme nefertiti
+let g:airline_theme='zenburn'
 
 " jump to prev/next line with same indentation level
 nnoremap <F9> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
